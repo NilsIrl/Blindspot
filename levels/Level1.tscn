@@ -46,7 +46,7 @@ enabled = true
 [node name="End" parent="Navigation/NavigationMeshInstance" index="1" instance=ExtResource( 3 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 2, 0 )
-_sections_unfolded = [ "Geometry", "LOD" ]
+_sections_unfolded = [ "Geometry", "LOD", "Transform" ]
 
 [node name="Player" parent="." index="1" instance=ExtResource( 4 )]
 

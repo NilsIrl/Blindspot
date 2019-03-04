@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/single-tone-testing.ogg-1352da0ee9b4b0f53c13ba36d53ff6db.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/single-tone-testing.ogg"
+dest_files=[ "res://.import/single-tone-testing.ogg-1352da0ee9b4b0f53c13ba36d53ff6db.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
