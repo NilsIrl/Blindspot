@@ -13,7 +13,7 @@ func _physics_process(delta):
 		if path[1] != $AudioStreamPlayer3D.global_transform.origin:
 			$AudioStreamPlayer3D.global_transform.origin = path[1]
 		var distance_to_audiostream = $AudioStreamPlayer3D.global_transform.origin.distance_to(player.global_transform.origin)
-		$AudioStreamPlayer3D.unit_db = INITIAL_DB - linear2db(1 / (distance / $AudioStreamPlayer3D.unit_size)) + linear2db(1 / (path_distance(path) / $AudioStreamPlayer3D.unit_size))
+		$AudioStreamPlayer3D.unit_db = INITIAL_DB - linear2db(1 / (distance_to_audiostream / $AudioStreamPlayer3D.unit_size)) + linear2db(1 / (path_distance(path) / $AudioStreamPlayer3D.unit_size))
 
 func rotate(delta):
 	$EndPoint.rotate_x(ROTATION_SPEED * delta)
