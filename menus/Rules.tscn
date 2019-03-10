@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://menus/Rules.gd" type="Script" id=1]
 [ext_resource path="res://menus/Layout.tscn" type="PackedScene" id=2]
@@ -6,7 +6,9 @@
 [ext_resource path="res://assets/audio/S-19.ogg" type="AudioStream" id=4]
 [ext_resource path="res://assets/audio/pit.ogg" type="AudioStream" id=5]
 [ext_resource path="res://assets/audio/zombie-audio.ogg" type="AudioStream" id=6]
-[ext_resource path="res://assets/audio/shot.ogg" type="AudioStream" id=7]
+[ext_resource path="res://assets/audio/zombie-death.ogg" type="AudioStream" id=7]
+[ext_resource path="res://assets/audio/shot.ogg" type="AudioStream" id=8]
+[ext_resource path="res://assets/audio/bump.ogg" type="AudioStream" id=9]
 
 [node name="Rules" type="Node"]
 script = ExtResource( 1 )
@@ -23,7 +25,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Layout/Control/VBoxContainer"]
-editor/display_folded = true
 margin_right = 1024.0
 margin_bottom = 36.0
 
@@ -41,63 +42,85 @@ margin_bottom = 36.0
 custom_fonts/font = ExtResource( 3 )
 text = "End sound"
 
-[node name="ControlLabel" type="Label" parent="Layout/Control/VBoxContainer"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="Layout/Control/VBoxContainer"]
 margin_top = 40.0
 margin_right = 1024.0
 margin_bottom = 136.0
+
+[node name="ControlLabel" type="Label" parent="Layout/Control/VBoxContainer/HBoxContainer3"]
+margin_right = 869.0
+margin_bottom = 96.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
 custom_fonts/font = ExtResource( 3 )
 text = "In order to move you need to use the WASD keys and the mouse to look left and right. Vertical mouse movement has been disabled/not implemented which means you are safe to look up and down."
 autowrap = true
 
+[node name="BumpButton" type="Button" parent="Layout/Control/VBoxContainer/HBoxContainer3"]
+margin_left = 873.0
+margin_right = 1024.0
+margin_bottom = 36.0
+size_flags_vertical = 0
+custom_fonts/font = ExtResource( 3 )
+text = "Bump Sound"
+
 [node name="HBoxContainer2" type="HBoxContainer" parent="Layout/Control/VBoxContainer"]
+editor/display_folded = true
 margin_top = 140.0
 margin_right = 1024.0
-margin_bottom = 2051.0
+margin_bottom = 1424.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="Layout/Control/VBoxContainer/HBoxContainer2"]
-margin_right = 850.0
-margin_bottom = 1911.0
+margin_right = 768.0
+margin_bottom = 1284.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 custom_fonts/font = ExtResource( 3 )
-text = "You must also make sure you do not get hit by a zombie. To avoid that you can aim at them and shoot them down with a left click. Be careful because they run faster than you do. There are also pits which you must jump over using the space bar."
+text = "You must also make sure you do not get hit by a zombie. To avoid that you can aim at them and shoot them down with a left click (only one on target is required). Be careful because they run faster than you do. On death, zombies will emit a noise telling you they died. There are also pits which you must jump over using the space bar."
 autowrap = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Layout/Control/VBoxContainer/HBoxContainer2"]
-editor/display_folded = true
-margin_left = 854.0
+margin_left = 772.0
 margin_right = 1024.0
-margin_bottom = 1911.0
+margin_bottom = 1284.0
 
 [node name="PitButton" type="Button" parent="Layout/Control/VBoxContainer/HBoxContainer2/VBoxContainer"]
-margin_right = 170.0
+margin_right = 252.0
 margin_bottom = 36.0
 custom_fonts/font = ExtResource( 3 )
 text = "Pit sound"
 
 [node name="ZombieButton" type="Button" parent="Layout/Control/VBoxContainer/HBoxContainer2/VBoxContainer"]
 margin_top = 40.0
-margin_right = 170.0
+margin_right = 252.0
 margin_bottom = 76.0
 custom_fonts/font = ExtResource( 3 )
 text = "Zombie sound"
 
 [node name="ShootButton" type="Button" parent="Layout/Control/VBoxContainer/HBoxContainer2/VBoxContainer"]
 margin_top = 80.0
-margin_right = 170.0
+margin_right = 252.0
 margin_bottom = 116.0
 custom_fonts/font = ExtResource( 3 )
 text = "Shoot sound"
 
+[node name="ZombieDeathButton" type="Button" parent="Layout/Control/VBoxContainer/HBoxContainer2/VBoxContainer"]
+margin_top = 120.0
+margin_right = 252.0
+margin_bottom = 156.0
+custom_fonts/font = ExtResource( 3 )
+text = "Zombie Death Sound"
+
 [node name="VoidLabel" type="Label" parent="Layout/Control/VBoxContainer"]
-margin_top = 2055.0
+margin_top = 1428.0
 margin_right = 1024.0
-margin_bottom = 2151.0
+margin_bottom = 1590.0
 size_flags_vertical = 1
 custom_fonts/font = ExtResource( 3 )
-text = "If you fall into the void that means that you left the map so do not try to jump over the void or anything like that and try a different path. Keep in mind that the void is very near to the start so it is likelly that you are going to fall on certain levels."
+text = "If you fall into the void that means that you left the map so do not try to jump over the void or anything like that and try a different path. Keep in mind that the void is very near to the start so it is likelly that you are going to fall on certain levels. However, on certain levels the void has been replaced by a wall making it effectively impossible to fall.
+"
 autowrap = true
 
 [node name="EndAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -109,16 +132,25 @@ stream = ExtResource( 5 )
 [node name="ZombieAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 
-[node name="ShootAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="ZombieDeathAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
+volume_db = 10.0
+
+[node name="ShootAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+
+[node name="BumpAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
 
 [node name="AudioTimer" type="Timer" parent="."]
 wait_time = 10.0
 
 [connection signal="pressed" from="Layout/Control/VBoxContainer/HBoxContainer/EndButton" to="." method="_on_EndButton_pressed"]
+[connection signal="pressed" from="Layout/Control/VBoxContainer/HBoxContainer3/BumpButton" to="." method="_on_BumpButton_pressed"]
 [connection signal="pressed" from="Layout/Control/VBoxContainer/HBoxContainer2/VBoxContainer/PitButton" to="." method="_on_PitButton_pressed"]
 [connection signal="pressed" from="Layout/Control/VBoxContainer/HBoxContainer2/VBoxContainer/ZombieButton" to="." method="_on_ZombieButton_pressed"]
 [connection signal="pressed" from="Layout/Control/VBoxContainer/HBoxContainer2/VBoxContainer/ShootButton" to="." method="_on_ShootButton_pressed"]
+[connection signal="pressed" from="Layout/Control/VBoxContainer/HBoxContainer2/VBoxContainer/ZombieDeathButton" to="." method="_on_ZombieDeathButton_pressed"]
 [connection signal="timeout" from="AudioTimer" to="." method="_on_AudioTimer_timeout"]
 
 [editable path="Layout"]
