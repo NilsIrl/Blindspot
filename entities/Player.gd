@@ -82,5 +82,4 @@ func _on_Dialog_about_to_show():
 	alive = false
 
 func _on_Dialog_popup_hide():
-	print("lol")
 	get_tree().change_scene("res://menus/LevelSelector.tscn")

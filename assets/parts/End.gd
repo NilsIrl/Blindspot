@@ -13,16 +13,8 @@ func _physics_process(delta):
 		var path = remove_intermediate_points(navigation.get_simple_path(player.get_translation(), self.get_translation(), true))
 		if path[1] != $AudioStreamPlayer3D.global_transform.origin:
 			$AudioStreamPlayer3D.set_translation(path[1] - self.get_global_transform().origin)
-		$ImmediateGeometry.clear()
-		$ImmediateGeometry.begin(Mesh.PRIMITIVE_LINE_STRIP)
-		for p in path:
-			$ImmediateGeometry.add_vertex(p - self.get_global_transform().origin)
-		$ImmediateGeometry.end()
-		
 		var distance_to_end = path_distance(path)
-		#$AudioStreamPlayer3D.unit_db = INITIAL_DB - linear2db(1 / (distance_to_audiostream / $AudioStreamPlayer3D.unit_size)) + linear2db(1 / (distance_to_end / $AudioStreamPlayer3D.unit_size))
 		$AudioStreamPlayer3D.unit_db = INITIAL_DB + linear2db(1 / (distance_to_end / $AudioStreamPlayer3D.unit_size))
-		print($AudioStreamPlayer3D.unit_db)
 		player.updateUI(distance_to_end)
 
 func rotate_own(delta):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://entities/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/cross-shaped-target.png" type="Texture" id=2]
@@ -15,6 +15,9 @@ roughness = 0.0
 [sub_resource type="CapsuleMesh" id=3]
 material = SubResource( 2 )
 
+[sub_resource type="Environment" id=4]
+background_mode = 2
+
 [node name="Player" type="KinematicBody"]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
 script = ExtResource( 1 )
@@ -28,6 +31,7 @@ material/0 = null
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 0, 0 )
+environment = SubResource( 4 )
 
 [node name="RayCast" type="RayCast" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 0, 0 )

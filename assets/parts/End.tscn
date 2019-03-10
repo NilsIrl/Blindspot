@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/parts/End.gd" type="Script" id=1]
 [ext_resource path="res://assets/audio/S-19.ogg" type="AudioStream" id=2]
@@ -22,10 +22,6 @@ material = SubResource( 3 )
 
 [sub_resource type="ConvexPolygonShape" id=5]
 points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
-
-[sub_resource type="SpatialMaterial" id=6]
-albedo_color = Color( 1, 0.046875, 0.046875, 1 )
-roughness = 0.0
 
 [node name="End" type="Spatial" groups=[
 "navigation",
@@ -51,8 +47,5 @@ material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="EndPoint"]
 shape = SubResource( 5 )
-
-[node name="ImmediateGeometry" type="ImmediateGeometry" parent="."]
-material_override = SubResource( 6 )
 
 [connection signal="body_entered" from="EndPoint" to="." method="_on_EndPoint_body_entered"]
