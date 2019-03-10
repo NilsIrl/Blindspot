@@ -1,21 +1,31 @@
 extends Spatial
 
-const ROTATION_SPEED = 3
+const ROTATION_SPEED = 10
 const INITIAL_DB = 0
 
 var navigation
 var player
 
 func _physics_process(delta):
-	rotate(delta)
+	rotate_own(delta)
+	#rotate(Vector3(0, 0, 0), ROTATION_SPEED)
 	if navigation and player:
 		var path = remove_intermediate_points(navigation.get_simple_path(player.get_translation(), self.get_translation(), true))
 		if path[1] != $AudioStreamPlayer3D.global_transform.origin:
-			$AudioStreamPlayer3D.global_transform.origin = path[1]
-		var distance_to_audiostream = $AudioStreamPlayer3D.global_transform.origin.distance_to(player.global_transform.origin)
-		$AudioStreamPlayer3D.unit_db = INITIAL_DB - linear2db(1 / (distance_to_audiostream / $AudioStreamPlayer3D.unit_size)) + linear2db(1 / (path_distance(path) / $AudioStreamPlayer3D.unit_size))
+			$AudioStreamPlayer3D.set_translation(path[1] - self.get_global_transform().origin)
+		$ImmediateGeometry.clear()
+		$ImmediateGeometry.begin(Mesh.PRIMITIVE_LINE_STRIP)
+		for p in path:
+			$ImmediateGeometry.add_vertex(p - self.get_global_transform().origin)
+		$ImmediateGeometry.end()
+		
+		var distance_to_end = path_distance(path)
+		#$AudioStreamPlayer3D.unit_db = INITIAL_DB - linear2db(1 / (distance_to_audiostream / $AudioStreamPlayer3D.unit_size)) + linear2db(1 / (distance_to_end / $AudioStreamPlayer3D.unit_size))
+		$AudioStreamPlayer3D.unit_db = INITIAL_DB + linear2db(1 / (distance_to_end / $AudioStreamPlayer3D.unit_size))
+		print($AudioStreamPlayer3D.unit_db)
+		player.updateUI(distance_to_end)
 
-func rotate(delta):
+func rotate_own(delta):
 	$EndPoint.rotate_x(ROTATION_SPEED * delta)
 	$EndPoint.rotate_y(ROTATION_SPEED * delta)
 	$EndPoint.rotate_z(ROTATION_SPEED * delta)
@@ -37,10 +47,13 @@ func remove_intermediate_points(simple_path):
 
 func is_intermediate_point(a, b, c):
 	return abs((c.z - a.z) * b.x - (c.x - a.x) * b.z + c.x * a.z - c.z * a.x)/sqrt(pow((c.z - a.z), 2) + pow((c.x - a.x), 2)) < 0.01
-	return false
 
 func path_distance(path):
 	var distance = 0
 	for x in path.size() - 1:
 		distance += path[x].distance_to(path[x + 1])
 	return distance
+
+func _on_EndPoint_body_entered(body):
+	if body.has_method("win"):
+		body.win()
