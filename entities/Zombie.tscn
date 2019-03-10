@@ -29,6 +29,8 @@ shape = SubResource( 3 )
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource( 2 )
+attenuation_model = 2
+unit_size = 30.0
 autoplay = true
 emission_angle_enabled = true
 

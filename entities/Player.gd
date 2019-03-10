@@ -43,15 +43,14 @@ func _physics_process(delta):
 		var collider = collision.collider
 		if "Floor" != collider.get_parent().get_name().left(5):
 			if is_on_wall() and !was_on_wall:
-				var audio_stream = $AudioStreamPlayer3D.duplicate()
-				add_child(audio_stream)
-				audio_stream.global_transform.origin = collision.position
-				audio_stream.play()
+				$BumpAudioStreamPlayer3D.global_transform.origin = collision.position
+				$BumpAudioStreamPlayer3D.play()
 	was_on_wall = is_on_wall()
 	
 	
 	# SHOOT
 	if Input.is_action_just_pressed("shoot") and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED and $RayCast.is_colliding():
+		$ShotAudioStreamPlayer.play()
 		var victim = $RayCast.get_collider()
 		if victim.has_method("kill"):
 			victim.kill()
@@ -82,4 +81,5 @@ func _on_Dialog_about_to_show():
 	alive = false
 
 func _on_Dialog_popup_hide():
+#warning-ignore:return_value_discarded
 	get_tree().change_scene("res://menus/LevelSelector.tscn")

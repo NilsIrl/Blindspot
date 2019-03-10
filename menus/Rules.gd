@@ -20,3 +20,8 @@ func _on_AudioTimer_timeout():
 	$EndAudioStreamPlayer.stop()
 	$PitAudioStreamPlayer.stop()
 	$ZombieAudioStreamPlayer.stop()
+
+func _on_ShootButton_pressed():
+	_on_AudioTimer_timeout()
+	$ShootAudioStreamPlayer.play()
+	$AudioTimer.start()
