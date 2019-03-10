@@ -1,16 +1,15 @@
 [gd_scene load_steps=3 format=2]
 
-[sub_resource type="CubeMesh" id=1]
+[sub_resource type="PlaneMesh" id=1]
 
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
-size = Vector3( 2, 2, 2 )
+size = Vector2( 2, 2 )
 subdivide_width = 0
-subdivide_height = 0
 subdivide_depth = 0
 
-[sub_resource type="ConvexPolygonShape" id=2]
+[sub_resource type="ConvexPolygonShape" id=3]
 
-points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
+points = PoolVector3Array( 1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, -1 )
 
 [node name="Floor" type="MeshInstance"]
 
@@ -41,7 +40,7 @@ constant_angular_velocity = Vector3( 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="StaticBody" index="0"]
 
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 disabled = false
 
 

@@ -1,164 +1,93 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://menus/Rules.gd" type="Script" id=1]
 [ext_resource path="res://menus/Layout.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/fonts/champagne_limousines/Champagne & Limousines.tres" type="DynamicFont" id=3]
 [ext_resource path="res://assets/audio/S-19.ogg" type="AudioStream" id=4]
+[ext_resource path="res://assets/audio/pit.ogg" type="AudioStream" id=5]
+[ext_resource path="res://assets/audio/zombie-audio.ogg" type="AudioStream" id=6]
 
 [node name="Rules" type="Node"]
-
 script = ExtResource( 1 )
 
-[node name="Layout" parent="." index="0" instance=ExtResource( 2 )]
-
+[node name="Layout" parent="." instance=ExtResource( 2 )]
 margin_left = 0.0
 margin_right = 0.0
 
-[node name="HBoxContainer" parent="Layout" index="0"]
-
-_sections_unfolded = [ "Anchor" ]
-
 [node name="Title" parent="Layout/HBoxContainer" index="1"]
-
 text = "Rules"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Layout/Control" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
-_sections_unfolded = [ "Anchor", "Margin" ]
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Layout/Control/VBoxContainer" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="HBoxContainer" type="HBoxContainer" parent="Layout/Control/VBoxContainer"]
 margin_right = 1024.0
 margin_bottom = 36.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
 
-[node name="Label" type="Label" parent="Layout/Control/VBoxContainer/HBoxContainer" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label" type="Label" parent="Layout/Control/VBoxContainer/HBoxContainer"]
 margin_top = 3.0
 margin_right = 739.0
 margin_bottom = 33.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 3 )
 text = "The finish a level you must reach the end sound with your hears only."
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
-[node name="Button" type="Button" parent="Layout/Control/VBoxContainer/HBoxContainer" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="EndButton" type="Button" parent="Layout/Control/VBoxContainer/HBoxContainer"]
 margin_left = 743.0
 margin_right = 871.0
 margin_bottom = 36.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 custom_fonts/font = ExtResource( 3 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "End sound"
-flat = false
-align = 1
-_sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Layout/Control/VBoxContainer" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="HBoxContainer2" type="HBoxContainer" parent="Layout/Control/VBoxContainer"]
 margin_top = 40.0
 margin_right = 1024.0
-margin_bottom = 41.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
+margin_bottom = 136.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-alignment = 0
-_sections_unfolded = [ "Grow Direction", "Mouse", "Size Flags" ]
 
-[node name="Label" type="Label" parent="Layout/Control/VBoxContainer/HBoxContainer2" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 1024.0
-margin_bottom = 1.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
+[node name="Label" type="Label" parent="Layout/Control/VBoxContainer/HBoxContainer2"]
+margin_right = 850.0
+margin_bottom = 96.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 custom_fonts/font = ExtResource( 3 )
 text = "You must also make sure you do not get hit by a zombie. To avoid that you can aim at them and shoot them down with a left click. Be careful because they run faster than you do. There are also pits which you must jump over."
 autowrap = true
-clip_text = true
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Size Flags", "custom_colors", "custom_fonts" ]
 
-[node name="EndMusicAudioStreamPlayer" type="AudioStreamPlayer" parent="." index="1"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Layout/Control/VBoxContainer/HBoxContainer2"]
+margin_left = 854.0
+margin_right = 1024.0
+margin_bottom = 96.0
 
+[node name="PitButton" type="Button" parent="Layout/Control/VBoxContainer/HBoxContainer2/VBoxContainer"]
+margin_right = 170.0
+margin_bottom = 36.0
+custom_fonts/font = ExtResource( 3 )
+text = "Pit sound"
+
+[node name="ZombieButton" type="Button" parent="Layout/Control/VBoxContainer/HBoxContainer2/VBoxContainer"]
+margin_top = 40.0
+margin_right = 170.0
+margin_bottom = 76.0
+custom_fonts/font = ExtResource( 3 )
+text = "Zombie sound"
+
+[node name="EndAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = false
-mix_target = 0
-bus = "Master"
 
-[node name="EndMusicTimer" type="Timer" parent="." index="2"]
+[node name="PitAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
 
-process_mode = 1
+[node name="ZombieAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[node name="AudioTimer" type="Timer" parent="."]
 wait_time = 10.0
-one_shot = false
-autostart = false
 
-[connection signal="timeout" from="EndMusicTimer" to="." method="_on_Timer_timeout"]
-
+[connection signal="pressed" from="Layout/Control/VBoxContainer/HBoxContainer/EndButton" to="." method="_on_EndButton_pressed"]
+[connection signal="pressed" from="Layout/Control/VBoxContainer/HBoxContainer2/VBoxContainer/PitButton" to="." method="_on_PitButton_pressed"]
+[connection signal="pressed" from="Layout/Control/VBoxContainer/HBoxContainer2/VBoxContainer/ZombieButton" to="." method="_on_ZombieButton_pressed"]
+[connection signal="timeout" from="AudioTimer" to="." method="_on_AudioTimer_timeout"]
 
 [editable path="Layout"]

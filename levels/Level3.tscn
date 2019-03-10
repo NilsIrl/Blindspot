@@ -1,0 +1,356 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://levels/Level.gd" type="Script" id=1]
+[ext_resource path="res://assets/parts/Pit.tscn" type="PackedScene" id=2]
+[ext_resource path="res://entities/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/parts/End.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/parts/Void.tscn" type="PackedScene" id=5]
+
+[sub_resource type="NavigationMesh" id=1]
+vertices = PoolVector3Array( -26.4, 0.35, -47.4, -35.4, 0.35, -47.4, -35.4, 0.35, -35.7, 111.3, 0.35, -35.7, 111.3, 0.35, -47.4, 102, 0.35, -47.4, -35.4, 0.35, 35.4, -35.4, 0.35, 47.4, -26.4, 0.35, 47.4, 102, 0.35, 47.4, 111.3, 0.35, 47.4, 111.3, 0.35, 35.4, -17.1, 0.35, -47.4, -26.4, 0.35, -47.4, -35.4, 0.35, -35.7, -35.4, 0.35, 35.4, -26.4, 0.35, 47.4, -17.1, 0.35, 47.4, 111.3, 0.35, -35.7, 102, 0.35, -47.4, 92.7, 0.35, -47.4, 92.7, 0.35, 47.4, 102, 0.35, 47.4, 111.3, 0.35, 35.4, -8.1, 0.35, -47.4, -17.1, 0.35, -47.4, -35.4, 0.35, -35.7, -35.4, 0.35, 35.4, -17.1, 0.35, 47.4, -8.1, 0.35, 47.4, 92.7, 0.35, 47.4, 111.3, 0.35, 35.4, 111.3, 0.35, 23.7, 83.4, 0.35, 47.4, 111.3, 0.35, -23.7, 111.3, 0.35, -35.7, 92.7, 0.35, -47.4, 83.4, 0.35, -47.4, -35.4, 0.35, 23.7, -35.4, 0.35, 35.4, -8.1, 0.35, 47.4, 1.2, 0.35, 47.4, -8.1, 0.35, -47.4, -35.4, 0.35, -35.7, -35.4, 0.35, -23.7, 1.2, 0.35, -47.4, -35.4, 0.35, 0, -35.4, 0.35, 11.7, 19.5, 0.35, 47.4, 28.5, 0.35, 47.4, 56.1, 0.35, 47.4, 65.1, 0.35, 47.4, 111.3, 0.35, 11.7, 56.1, 0.35, 47.4, 111.3, 0.35, 11.7, 111.3, 0.35, 0, 46.8, 0.35, 47.4, 19.5, 0.35, -47.4, -35.4, 0.35, -12, -35.4, 0.35, 0, 28.5, 0.35, -47.4, 74.4, 0.35, 47.4, 83.4, 0.35, 47.4, 111.3, 0.35, 23.7, 111.3, 0.35, -23.7, 83.4, 0.35, -47.4, 74.4, 0.35, -47.4, 1.2, 0.35, -47.4, -35.4, 0.35, -23.7, -35.4, 0.35, -12, 10.2, 0.35, -47.4, -35.4, 0.35, 11.7, -35.4, 0.35, 23.7, 1.2, 0.35, 47.4, 10.2, 0.35, 47.4, 111.3, 0.35, -12, 111.3, 0.35, -23.7, 74.4, 0.35, -47.4, 65.1, 0.35, -47.4, 74.4, 0.35, 47.4, 111.3, 0.35, 23.7, 111.3, 0.35, 11.7, 65.1, 0.35, 47.4, 111.3, 0.35, 0, 111.3, 0.35, -12, 56.1, 0.35, -47.4, 46.8, 0.35, -47.4, -35.4, 0.35, 0, 28.5, 0.35, 47.4, 37.8, 0.35, 47.4, 37.8, 0.35, -47.4, 28.5, 0.35, -47.4, -35.4, 0.35, 0, 37.8, 0.35, -47.4, -35.4, 0.35, 0, 37.8, 0.35, 47.4, 46.8, 0.35, 47.4, 111.3, 0.35, 0, 46.8, 0.35, -47.4, 19.5, 0.35, -47.4, 10.2, 0.35, -47.4, -35.4, 0.35, -12, -35.4, 0.35, 11.7, 10.2, 0.35, 47.4, 19.5, 0.35, 47.4, 111.3, 0.35, -12, 65.1, 0.35, -47.4, 56.1, 0.35, -47.4 )
+polygons = [ PoolIntArray( 2, 0, 1 ), PoolIntArray( 5, 3, 4 ), PoolIntArray( 8, 6, 7 ), PoolIntArray( 11, 9, 10 ), PoolIntArray( 14, 12, 13 ), PoolIntArray( 17, 15, 16 ), PoolIntArray( 20, 18, 19 ), PoolIntArray( 23, 21, 22 ), PoolIntArray( 26, 24, 25 ), PoolIntArray( 29, 27, 28 ), PoolIntArray( 33, 30, 32 ), PoolIntArray( 30, 31, 32 ), PoolIntArray( 37, 34, 36 ), PoolIntArray( 34, 35, 36 ), PoolIntArray( 41, 38, 40 ), PoolIntArray( 38, 39, 40 ), PoolIntArray( 45, 42, 44 ), PoolIntArray( 42, 43, 44 ), PoolIntArray( 49, 46, 48 ), PoolIntArray( 46, 47, 48 ), PoolIntArray( 52, 50, 51 ), PoolIntArray( 56, 53, 55 ), PoolIntArray( 53, 54, 55 ), PoolIntArray( 60, 57, 59 ), PoolIntArray( 57, 58, 59 ), PoolIntArray( 63, 61, 62 ), PoolIntArray( 66, 64, 65 ), PoolIntArray( 70, 67, 69 ), PoolIntArray( 67, 68, 69 ), PoolIntArray( 74, 71, 73 ), PoolIntArray( 71, 72, 73 ), PoolIntArray( 78, 75, 77 ), PoolIntArray( 75, 76, 77 ), PoolIntArray( 82, 79, 81 ), PoolIntArray( 79, 80, 81 ), PoolIntArray( 86, 83, 85 ), PoolIntArray( 83, 84, 85 ), PoolIntArray( 89, 87, 88 ), PoolIntArray( 92, 90, 91 ), PoolIntArray( 98, 93, 97 ), PoolIntArray( 93, 96, 97 ), PoolIntArray( 93, 95, 96 ), PoolIntArray( 93, 94, 95 ), PoolIntArray( 101, 99, 100 ), PoolIntArray( 104, 102, 103 ), PoolIntArray( 107, 105, 106 ) ]
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0, 0.789062, 1, 1 )
+roughness = 0.0
+
+[sub_resource type="PlaneMesh" id=3]
+material = SubResource( 2 )
+
+[sub_resource type="ConvexPolygonShape" id=4]
+points = PoolVector3Array( 1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, -1 )
+
+[node name="Level3" type="Node"]
+script = ExtResource( 1 )
+
+[node name="World" type="Spatial" parent="."]
+
+[node name="Navigation" type="Navigation" parent="World"]
+editor/display_folded = true
+
+[node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="World/Navigation"]
+navmesh = SubResource( 1 )
+
+[node name="BigPit" type="Spatial" parent="World/Navigation/NavigationMeshInstance"]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Pit16" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 37, -1, 21 )
+
+[node name="Pit30" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 37, -1, 1 )
+
+[node name="Pit17" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 37, -1, 13 )
+
+[node name="Pit44" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 37, -1, -7 )
+
+[node name="Pit9" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 37, -1, 25 )
+
+[node name="Pit41" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 37, -1, 5 )
+
+[node name="Pit21" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 37, -1, 17 )
+
+[node name="Pit39" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 37, -1, -3 )
+
+[node name="Pit12" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 37, -1, 23 )
+
+[node name="Pit32" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 37, -1, 3 )
+
+[node name="Pit18" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 37, -1, 15 )
+
+[node name="Pit38" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 37, -1, -5 )
+
+[node name="Pit25" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 37, -1, 11 )
+
+[node name="Pit46" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 37, -1, -9 )
+
+[node name="Pit27" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 39, -1, 11 )
+
+[node name="Pit43" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 39, -1, -9 )
+
+[node name="Pit26" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 37, -1, 9 )
+
+[node name="Pit37" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 37, -1, -11 )
+
+[node name="Pit28" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 39, -1, 9 )
+
+[node name="Pit31" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 39, -1, -11 )
+
+[node name="Pit49" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 39, -1, -13 )
+
+[node name="Pit50" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 37, -1, -13 )
+
+[node name="Pit51" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 37, -1, -15 )
+
+[node name="Pit52" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 37, -1, -17 )
+
+[node name="Pit53" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 37, -1, -19 )
+
+[node name="Pit54" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 39, -1, -19 )
+
+[node name="Pit55" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 39, -1, -15 )
+
+[node name="Pit56" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 39, -1, -17 )
+
+[node name="Pit15" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 37, -1, 27 )
+
+[node name="Pit58" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 37, -1, 29 )
+
+[node name="Pit60" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 37, -1, 31 )
+
+[node name="Pit61" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 37, -1, 33 )
+
+[node name="Pit64" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 37, -1, 35 )
+
+[node name="Pit65" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 37, -1, 37 )
+
+[node name="Pit68" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 37, -1, 39 )
+
+[node name="Pit69" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 37, -1, 41 )
+
+[node name="Pit71" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 37, -1, 43 )
+
+[node name="Pit73" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 37, -1, 45 )
+
+[node name="Pit76" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 37, -1, 47 )
+
+[node name="Pit77" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 37, -1, -21 )
+
+[node name="Pit80" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 37, -1, -23 )
+
+[node name="Pit82" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 37, -1, -25 )
+
+[node name="Pit83" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 37, -1, -27 )
+
+[node name="Pit86" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 37, -1, -29 )
+
+[node name="Pit87" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 37, -1, -31 )
+
+[node name="Pit90" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 37, -1, -33 )
+
+[node name="Pit92" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 37, -1, -35 )
+
+[node name="Pit94" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 37, -1, -37 )
+
+[node name="Pit96" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 37, -1, -39 )
+
+[node name="Pit98" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 37, -1, -41 )
+
+[node name="Pit100" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 37, -1, -43 )
+
+[node name="Pit102" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 37, -1, -45 )
+
+[node name="Pit104" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 37, -1, -47 )
+
+[node name="Pit48" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 37, -1, 7 )
+
+[node name="Pit24" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 37, -1, 19 )
+
+[node name="Pit29" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 37, -1, -1 )
+
+[node name="Pit13" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 39, -1, 21 )
+
+[node name="Pit34" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 39, -1, 1 )
+
+[node name="Pit20" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 39, -1, 13 )
+
+[node name="Pit36" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 39, -1, -7 )
+
+[node name="Pit11" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 39, -1, 25 )
+
+[node name="Pit33" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 39, -1, 5 )
+
+[node name="Pit19" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 39, -1, 17 )
+
+[node name="Pit35" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 39, -1, -3 )
+
+[node name="Pit14" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 39, -1, 23 )
+
+[node name="Pit47" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 39, -1, 3 )
+
+[node name="Pit23" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 39, -1, 15 )
+
+[node name="Pit42" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 39, -1, -5 )
+
+[node name="Pit10" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 39, -1, 27 )
+
+[node name="Pit57" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 39, -1, 29 )
+
+[node name="Pit59" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 39, -1, 31 )
+
+[node name="Pit62" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 39, -1, 33 )
+
+[node name="Pit63" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 39, -1, 35 )
+
+[node name="Pit66" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 39, -1, 37 )
+
+[node name="Pit67" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 39, -1, 39 )
+
+[node name="Pit70" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 39, -1, 41 )
+
+[node name="Pit72" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 39, -1, 43 )
+
+[node name="Pit74" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 39, -1, 45 )
+
+[node name="Pit75" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 39, -1, 47 )
+
+[node name="Pit78" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 39, -1, -21 )
+
+[node name="Pit79" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 39, -1, -23 )
+
+[node name="Pit81" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 39, -1, -25 )
+
+[node name="Pit84" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 39, -1, -27 )
+
+[node name="Pit85" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 39, -1, -29 )
+
+[node name="Pit88" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 39, -1, -31 )
+
+[node name="Pit89" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 39, -1, -33 )
+
+[node name="Pit91" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 39, -1, -35 )
+
+[node name="Pit93" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 39, -1, -37 )
+
+[node name="Pit95" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 39, -1, -39 )
+
+[node name="Pit97" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 39, -1, -41 )
+
+[node name="Pit99" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 39, -1, -43 )
+
+[node name="Pit101" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 39, -1, -45 )
+
+[node name="Pit103" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 39, -1, -47 )
+
+[node name="Pit45" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 39, -1, 7 )
+
+[node name="Pit22" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 39, -1, 19 )
+
+[node name="Pit40" parent="World/Navigation/NavigationMeshInstance/BigPit" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 39, -1, -1 )
+
+[node name="Floor" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance"]
+editor/display_folded = true
+transform = Transform( 36, 0, 0, 0, 1, 0, 0, 0, 48, 0, 0, 0 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Floor"]
+
+[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Floor/StaticBody"]
+shape = SubResource( 4 )
+
+[node name="Floor2" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance"]
+editor/display_folded = true
+transform = Transform( 36, 0, 0, 0, 1, 0, 0, 0, 48, 76, 0, 0 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Floor2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Floor2/StaticBody"]
+shape = SubResource( 4 )
+
+[node name="Player" parent="World" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, -4, 4, 0 )
+
+[node name="End" parent="World" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 68, 2, 8 )
+
+[node name="Void" parent="World" instance=ExtResource( 5 )]
+transform = Transform( 2000, 0, 0, 0, 1, 0, 0, 0, 2000, 0, -17, 0 )
+

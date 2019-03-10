@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/parts/Pit.gd" type="Script" id=1]
+[ext_resource path="res://assets/audio/pit.ogg" type="AudioStream" id=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 1, 0, 0, 1 )
+roughness = 0.0
+
+[sub_resource type="CubeMesh" id=2]
+material = SubResource( 1 )
+size = Vector3( 2, 1, 2 )
+
+[sub_resource type="ConvexPolygonShape" id=3]
+points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
+
+[node name="Pit" type="MeshInstance"]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0, 0 )
+mesh = SubResource( 2 )
+material/0 = null
+script = ExtResource( 1 )
+
+[node name="Detection" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -20, 0 )
+
+[node name="Area" type="Area" parent="Detection"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Detection/Area"]
+shape = SubResource( 3 )
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Detection"]
+stream = ExtResource( 2 )
+attenuation_model = 1
+unit_db = 10.0
+unit_size = 2.0
+autoplay = true
+
+[connection signal="body_entered" from="Detection/Area" to="." method="_on_Area_body_entered"]
