@@ -24,1002 +24,1003 @@ points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1,
 [sub_resource type="ConvexPolygonShape" id=6]
 points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
 
-[node name="Level5" type="Node"]
+[node name="Level5" type="Spatial"]
+
+[node name="Navigation" type="Navigation" parent="."]
 script = ExtResource( 1 )
 
-[node name="World" type="Spatial" parent="."]
-
-[node name="Navigation" type="Navigation" parent="World"]
-
-[node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="World/Navigation"]
+[node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="Navigation"]
 navmesh = SubResource( 1 )
 
-[node name="Maze" type="Spatial" parent="World/Navigation/NavigationMeshInstance"]
+[node name="Maze" type="Spatial" parent="Navigation/NavigationMeshInstance"]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 2, 0, 0, 0, 1, -25, 0, 10 )
 
-[node name="MeshInstance" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( 48, 0, 0, 0, 3, 0, 0, 0, 0.1, 29, 3, 42 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="MeshInstance2" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance2" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( 44, 0, 0, 0, 3, 0, 0, 0, 0.1, 33, 3, -62 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance2"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance2"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance2/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance2/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="MeshInstance8" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance8" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( 16, 0, 0, 0, 3, 0, 0, 0, 0.1, 5, 3, 18 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance8"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance8"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance8/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance8/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="MeshInstance17" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance17" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( 20, 0, 0, 0, 3, 0, 0, 0, 0.1, 1, 3, 2 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance17"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance17"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance17/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance17/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="MeshInstance67" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance67" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( -3.25841e-06, 0, 0.1, 0, 3, 0, -20, 0, -1.62921e-08, 69, 3, 14 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance67"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance67"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance67/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance67/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="MeshInstance84" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance84" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( 20, 0, 0, 0, 3, 0, 0, 0, 0.1, 41, 3, -46 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance84"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance84"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance84/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance84/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="MeshInstance42" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance42" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( -3.25841e-06, 0, 0.1, 0, 3, 0, -20, 0, -1.62921e-08, 13, 3, -34 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance42"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance42"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance42/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance42/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="MeshInstance16" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance16" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( -2.60673e-06, 0, 0.1, 0, 3, 0, -16, 0, -1.62921e-08, -19, 3, 2 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance16"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance16"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance16/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance16/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="MeshInstance44" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance44" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( -2.60673e-06, 0, 0.1, 0, 3, 0, -16, 0, -1.62921e-08, 29, 3, -14 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance44"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance44"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance44/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance44/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="MeshInstance50" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance50" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( -2.60673e-06, 0, 0.1, 0, 3, 0, -16, 0, -1.62921e-08, 37, 3, -22 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance50"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance50"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance50/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance50/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="MeshInstance51" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance51" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( -2.60673e-06, 0, 0.1, 0, 3, 0, -16, 0, -1.62921e-08, 45, 3, -22 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance51"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance51"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance51/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance51/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="MeshInstance11" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance11" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( 12, 0, 0, 0, 3, 0, 0, 0, 0.1, -7, 3, 26 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance11"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance11"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance11/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance11/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="MeshInstance25" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance25" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( -1.95505e-06, 0, 0.1, 0, 3, 0, -12, 0, -1.62921e-08, -3, 3, -10 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance25"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance25"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance25/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance25/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="MeshInstance14" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance14" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( -1.95505e-06, 0, 0.1, 0, 3, 0, -12, 0, -1.62921e-08, 29, 3, 22 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance14"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance14"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance14/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance14/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="MeshInstance58" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance58" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( 12, 0, 0, 0, 3, 0, 0, 0, 0.1, 49, 3, 26 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance58"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance58"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance58/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance58/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="MeshInstance59" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance59" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( 12, 0, 0, 0, 3, 0, 0, 0, 0.1, 49, 3, 26 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance59"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance59"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance59/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance59/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="MeshInstance12" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance12" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( -1.95505e-06, 0, 0.1, 0, 3, 0, -12, 0, -1.62921e-08, 13, 3, 22 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance12"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance12"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance12/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance12/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="MeshInstance10" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance10" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( 24, 0, 0, 0, 3, 0, 0, 0, 0.1, 5, 3, 34 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance10"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance10"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance10/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance10/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="MeshInstance5" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance5" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( 8, 0, 0, 0, 3, 0, 0, 0, 0.1, 37, 3, 18 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance5"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance5"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance5/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance5/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="MeshInstance7" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance7" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( 8, 0, 0, 0, 3, 0, 0, 0, 0.1, 53, 3, 10 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance7"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance7"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance7/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance7/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="MeshInstance72" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance72" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( 8, 0, 0, 0, 3, 0, 0, 0, 0.1, 53, 3, -30 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance72"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance72"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance72/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance72/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="MeshInstance61" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance61" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( 8, 0, 0, 0, 3, 0, 0, 0, 0.1, 61, 3, 34 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance61"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance61"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance61/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance61/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="MeshInstance6" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance6" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( -1.30337e-06, 0, 0.1, 0, 3, 0, -8, 0, -1.62921e-08, 45, 3, 18 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance6"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance6"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance6/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance6/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.72456e-08, 0, 0 )
 shape = SubResource( 4 )
 
-[node name="MeshInstance62" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance62" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( -6.51683e-07, 0, 0.1, 0, 3, 0, -4, 0, -1.62921e-08, 45, 3, 38 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance62"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance62"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance62/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance62/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.72456e-08, 0, 0 )
 shape = SubResource( 4 )
 
-[node name="MeshInstance63" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance63" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( -6.51683e-07, 0, 0.1, 0, 3, 0, -4, 0, -1.62921e-08, 37, 3, 38 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance63"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance63"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance63/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance63/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.72456e-08, 0, 0 )
 shape = SubResource( 4 )
 
-[node name="MeshInstance13" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance13" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( 4, 0, 0, 0, 3, 0, 0, 0, 0.1, 25, 3, 26 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance13"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance13"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance13/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance13/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="MeshInstance9" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance9" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( -6.51683e-07, 0, 0.1, 0, 3, 0, -4, 0, -1.62921e-08, -11, 3, 22 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance9"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance9"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance9/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance9/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="MeshInstance18" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance18" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( 4, 0, 0, 0, 3, 0, 0, 0, 0.1, -7, 3, 10 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance18"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance18"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance18/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance18/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="MeshInstance24" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance24" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( 4, 0, 0, 0, 3, 0, 0, 0, 0.1, -7, 3, -6 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance24"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance24"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance24/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance24/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="MeshInstance27" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance27" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( 4, 0, 0, 0, 3, 0, 0, 0, 0.1, -15, 3, -14 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance27"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance27"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance27/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance27/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="MeshInstance37" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance37" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( 4, 0, 0, 0, 3, 0, 0, 0, 0.1, -15, 3, -54 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance37"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance37"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance37/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance37/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="MeshInstance38" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance38" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( 4, 0, 0, 0, 3, 0, 0, 0, 0.1, -23, 3, -46 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance38"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance38"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance38/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance38/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="MeshInstance39" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance39" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( 4, 0, 0, 0, 3, 0, 0, 0, 0.1, -23, 3, -62 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance39"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance39"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance39/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance39/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="MeshInstance29" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance29" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( 4, 0, 0, 0, 3, 0, 0, 0, 0.1, -23, 3, -22 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance29"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance29"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance29/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance29/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="MeshInstance31" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance31" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( 4, 0, 0, 0, 3, 0, 0, 0, 0.1, 1, 3, -22 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance31"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance31"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance31/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance31/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="MeshInstance45" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance45" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( 4, 0, 0, 0, 3, 0, 0, 0, 0.1, 25, 3, -22 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance45"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance45"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance45/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance45/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="MeshInstance48" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance48" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( 4, 0, 0, 0, 3, 0, 0, 0, 0.1, 33, 3, -38 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance48"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance48"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance48/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance48/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="MeshInstance49" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance49" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( 4, 0, 0, 0, 3, 0, 0, 0, 0.1, 41, 3, -38 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance49"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance49"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance49/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance49/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="MeshInstance46" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance46" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( 4, 0, 0, 0, 3, 0, 0, 0, 0.1, 25, 3, -14 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance46"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance46"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance46/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance46/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="MeshInstance52" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance52" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( 4, 0, 0, 0, 3, 0, 0, 0, 0.1, 49, 3, -6 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance52"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance52"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance52/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance52/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="MeshInstance53" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance53" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( -6.51683e-07, 0, 0.1, 0, 3, 0, -4, 0, -1.62921e-08, 53, 3, -2 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance53"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance53"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance53/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance53/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.29317e-08, 0, 0 )
 shape = SubResource( 4 )
 
-[node name="MeshInstance68" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance68" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( 4, 0, 0, 0, 3, 0, 0, 0, 0.1, 65, 3, -6 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance68"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance68"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance68/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance68/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="MeshInstance74" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance74" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( 4, 0, 0, 0, 3, 0, 0, 0, 0.1, 73, 3, -14 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance74"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance74"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance74/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance74/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="MeshInstance78" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance78" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( 4, 0, 0, 0, 3, 0, 0, 0, 0.1, 73, 3, -30 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance78"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance78"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance78/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance78/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="MeshInstance79" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance79" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( 4, 0, 0, 0, 3, 0, 0, 0, 0.1, 65, 3, -54 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance79"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance79"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance79/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance79/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="MeshInstance82" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance82" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( 4, 0, 0, 0, 3, 0, 0, 0, 0.1, 41, 3, -54 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance82"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance82"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance82/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance82/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="MeshInstance83" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance83" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( -6.51683e-07, 0, 0.1, 0, 3, 0, -4, 0, -1.62921e-08, 37, 3, -50 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance83"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance83"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance83/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance83/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="MeshInstance85" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance85" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( -6.51683e-07, 0, 0.1, 0, 3, 0, -4, 0, -1.62921e-08, 21, 3, -58 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance85"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance85"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance85/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance85/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="MeshInstance86" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance86" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( 4, 0, 0, 0, 3, 0, 0, 0, 0.1, 25, 3, -54 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance86"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance86"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance86/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance86/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="MeshInstance80" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance80" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( 4, 0, 0, 0, 3, 0, 0, 0, 0.1, 65, 3, -38 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance80"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance80"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance80/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance80/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="MeshInstance70" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance70" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( 4, 0, 0, 0, 3, 0, 0, 0, 0.1, 57, 3, -14 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance70"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance70"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance70/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance70/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.29317e-08, 0, 0 )
 shape = SubResource( 4 )
 
-[node name="MeshInstance73" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance73" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( 4, 0, 0, 0, 3, 0, 0, 0, 0.1, 65, 3, -22 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance73"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance73"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance73/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance73/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.29317e-08, 0, 0 )
 shape = SubResource( 4 )
 
-[node name="MeshInstance56" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance56" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( -6.51683e-07, 0, 0.1, 0, 3, 0, -4, 0, -1.62921e-08, 53, 3, 14 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance56"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance56"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance56/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance56/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.29317e-08, 0, 0 )
 shape = SubResource( 4 )
 
-[node name="MeshInstance65" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance65" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( -6.51683e-07, 0, 0.1, 0, 3, 0, -4, 0, -1.62921e-08, 61, 3, 22 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance65"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance65"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance65/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance65/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.29317e-08, 0, 0 )
 shape = SubResource( 4 )
 
-[node name="MeshInstance66" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance66" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( -6.51683e-07, 0, 0.1, 0, 3, 0, -4, 0, -1.62921e-08, 61, 3, 6 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance66"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance66"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance66/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance66/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.29317e-08, 0, 0 )
 shape = SubResource( 4 )
 
-[node name="MeshInstance69" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance69" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( -6.51683e-07, 0, 0.1, 0, 3, 0, -4, 0, -1.62921e-08, 61, 3, -10 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance69"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance69"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance69/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance69/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.29317e-08, 0, 0 )
 shape = SubResource( 4 )
 
-[node name="MeshInstance75" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance75" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( -6.51683e-07, 0, 0.1, 0, 3, 0, -4, 0, -1.62921e-08, 69, 3, -18 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance75"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance75"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance75/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance75/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.29317e-08, 0, 0 )
 shape = SubResource( 4 )
 
-[node name="MeshInstance77" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance77" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( -1.95505e-06, 0, 0.1, 0, 3, 0, -12, 0, -1.62921e-08, 69, 3, -42 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance77"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance77"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance77/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance77/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.29317e-08, 0, 0 )
 shape = SubResource( 4 )
 
-[node name="MeshInstance81" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance81" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( -1.95505e-06, 0, 0.1, 0, 3, 0, -12, 0, -1.62921e-08, 53, 3, -50 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance81"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance81"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance81/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance81/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.29317e-08, 0, 0 )
 shape = SubResource( 4 )
 
-[node name="MeshInstance71" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance71" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( -6.51683e-07, 0, 0.1, 0, 3, 0, -4, 0, -1.62921e-08, 53, 3, -18 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance71"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance71"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance71/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance71/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.29317e-08, 0, 0 )
 shape = SubResource( 4 )
 
-[node name="MeshInstance76" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance76" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( -6.51683e-07, 0, 0.1, 0, 3, 0, -4, 0, -1.62921e-08, 61, 3, -26 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance76"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance76"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance76/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance76/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.29317e-08, 0, 0 )
 shape = SubResource( 4 )
 
-[node name="MeshInstance60" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance60" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( -6.51683e-07, 0, 0.1, 0, 3, 0, -4, 0, -1.62921e-08, 53, 3, 30 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance60"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance60"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance60/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance60/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.29317e-08, 0, 0 )
 shape = SubResource( 4 )
 
-[node name="MeshInstance57" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance57" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( -6.51683e-07, 0, 0.1, 0, 3, 0, -4, 0, -1.62921e-08, 53, 3, 14 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance57"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance57"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance57/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance57/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.29317e-08, 0, 0 )
 shape = SubResource( 4 )
 
-[node name="MeshInstance55" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance55" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( -6.51683e-07, 0, 0.1, 0, 3, 0, -4, 0, -1.62921e-08, 37, 3, 6 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance55"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance55"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance55/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance55/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.29317e-08, 0, 0 )
 shape = SubResource( 4 )
 
-[node name="MeshInstance54" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance54" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( 12, 0, 0, 0, 3, 0, 0, 0, 0.1, 41, 3, 2 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance54"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance54"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance54/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance54/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="MeshInstance28" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance28" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( -6.51683e-07, 0, 0.1, 0, 3, 0, -4, 0, -1.62921e-08, -11, 3, -18 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance28"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance28"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance28/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance28/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="MeshInstance35" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance35" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( -6.51683e-07, 0, 0.1, 0, 3, 0, -4, 0, -1.62921e-08, -3, 3, -42 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance35"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance35"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance35/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance35/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2219e-07, 0, 0 )
 shape = SubResource( 4 )
 
-[node name="MeshInstance41" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance41" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( -6.51683e-07, 0, 0.1, 0, 3, 0, -4, 0, -1.62921e-08, 5, 3, -49 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance41"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance41"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance41/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance41/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2219e-07, 0, 0 )
 shape = SubResource( 4 )
 
-[node name="MeshInstance20" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance20" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( 4, 0, 0, 0, 3, 0, 0, 0, 0.1, 1, 3, 10 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance20"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance20"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance20/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance20/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="MeshInstance22" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance22" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( 4, 0, 0, 0, 3, 0, 0, 0, 0.1, 25, 3, 10 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance22"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance22"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance22/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance22/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="MeshInstance19" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance19" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( -6.51683e-07, 0, 0.1, 0, 3, 0, -4, 0, -1.62921e-08, 5, 3, 6 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance19"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance19"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance19/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance19/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.88053e-08, 0, 0 )
 shape = SubResource( 4 )
 
-[node name="MeshInstance21" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance21" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( -1.30337e-06, 0, 0.1, 0, 3, 0, -8, 0, -1.62921e-08, 21, 3, 2 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance21"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance21"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance21/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance21/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.88053e-08, 0, 0 )
 shape = SubResource( 4 )
 
-[node name="MeshInstance47" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance47" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( -1.30337e-06, 0, 0.1, 0, 3, 0, -8, 0, -1.62921e-08, 21, 3, -38 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance47"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance47"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance47/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance47/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.88053e-08, 0, 0 )
 shape = SubResource( 4 )
 
-[node name="MeshInstance26" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance26" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( -1.30337e-06, 0, 0.1, 0, 3, 0, -8, 0, -1.62921e-08, -19, 3, -30 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance26"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance26"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance26/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance26/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.88053e-08, 0, 0 )
 shape = SubResource( 4 )
 
-[node name="MeshInstance32" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance32" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( -1.30337e-06, 0, 0.1, 0, 3, 0, -8, 0, -1.62921e-08, 5, 3, -30 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance32"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance32"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance32/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance32/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.88053e-08, 0, 0 )
 shape = SubResource( 4 )
 
-[node name="MeshInstance36" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance36" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( -1.30337e-06, 0, 0.1, 0, 3, 0, -8, 0, -1.62921e-08, -11, 3, -46 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance36"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance36"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance36/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance36/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.88053e-08, 0, 0 )
 shape = SubResource( 4 )
 
-[node name="MeshInstance33" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance33" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( -1.30337e-06, 0, 0.1, 0, 3, 0, -8, 0, -1.62921e-08, 5, 3, -30 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance33"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance33"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance33/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance33/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.88053e-08, 0, 0 )
 shape = SubResource( 4 )
 
-[node name="MeshInstance30" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance30" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( 8, 0, 0, 0, 3, 0, 0, 0, 0.1, -11, 3, -30 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance30"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance30"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance30/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance30/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.88053e-08, 0, 0 )
 shape = SubResource( 4 )
 
-[node name="MeshInstance34" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance34" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( 8, 0, 0, 0, 3, 0, 0, 0, 0.1, -3, 3, -38 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance34"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance34"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance34/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance34/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.88053e-08, 0, 0 )
 shape = SubResource( 4 )
 
-[node name="MeshInstance43" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance43" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( 8, 0, 0, 0, 3, 0, 0, 0, 0.1, 5, 3, -14 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance43"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance43"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance43/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance43/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.88053e-08, 0, 0 )
 shape = SubResource( 4 )
 
-[node name="MeshInstance40" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance40" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( 8, 0, 0, 0, 3, 0, 0, 0, 0.1, 5, 3, -54 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance40"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance40"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance40/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance40/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.88053e-08, 0, 0 )
 shape = SubResource( 4 )
 
-[node name="MeshInstance23" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance23" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( 8, 0, 0, 0, 3, 0, 0, 0, 0.1, 13, 3, -6 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance23"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance23"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance23/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance23/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="MeshInstance15" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance15" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( 4, 0, 0, 0, 3, 0, 0, 0, 0.1, -23, 3, 18 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance15"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance15"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance15/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance15/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="MeshInstance4" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance4" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( -8.47188e-06, 0, 0.1, 0, 3, 0, -52, 0, -1.62921e-08, -27, 3, -10 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance4"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance4"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance4/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance4/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="MeshInstance64" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance/Maze"]
+[node name="MeshInstance64" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]
 editor/display_folded = true
 transform = Transform( -8.47188e-06, 0, 0.1, 0, 3, 0, -52, 0, -1.62921e-08, 77, 3, -10 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance64"]
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance64"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Maze/MeshInstance64/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Maze/MeshInstance64/StaticBody"]
 shape = SubResource( 4 )
 
-[node name="Floor" type="MeshInstance" parent="World/Navigation/NavigationMeshInstance"]
+[node name="Floor" type="MeshInstance" parent="Navigation/NavigationMeshInstance"]
 transform = Transform( 52, 0, 0, 0, 1, 0, 0, 0, 100, 0, 0, 0 )
 mesh = SubResource( 5 )
 material/0 = null
 
-[node name="StaticBody2" type="StaticBody" parent="World/Navigation/NavigationMeshInstance/Floor"]
+[node name="StaticBody2" type="StaticBody" parent="Navigation/NavigationMeshInstance/Floor"]
 
-[node name="CollisionShape" type="CollisionShape" parent="World/Navigation/NavigationMeshInstance/Floor/StaticBody2"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Floor/StaticBody2"]
 shape = SubResource( 6 )
 
-[node name="Player" parent="World" instance=ExtResource( 2 )]
+[node name="Player" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, -42, 4, 78 )
 
-[node name="End" parent="World" instance=ExtResource( 3 )]
+[node name="End" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -41, 3, -59 )
 
-[node name="Void" parent="World" instance=ExtResource( 4 )]
+[node name="Void" parent="." instance=ExtResource( 4 )]
 transform = Transform( 2000, 0, 0, 0, 1, 0, 0, 0, 2000, 0, -23, 0 )
+
+[node name="Level5" type="Node" parent="."]
+script = ExtResource( 1 )
 
