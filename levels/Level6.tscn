@@ -33,7 +33,6 @@ script = ExtResource( 1 )
 navmesh = SubResource( 1 )
 
 [node name="Maze" type="Spatial" parent="Navigation/NavigationMeshInstance"]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 2, 0, 0, 0, 1, -25, 0, 10 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Maze"]

@@ -31,7 +31,6 @@ unit_size = 30.0
 autoplay = true
 emission_angle_enabled = true
 emission_angle_filter_attenuation_db = -30.0
-doppler_tracking = 2
 
 [node name="EndPoint" type="Area" parent="."]
 
