@@ -54,6 +54,7 @@ func _physics_process(delta):
 			var victim = $RayCast.get_collider()
 			if victim.has_method("kill"):
 				victim.kill()
+				$RayCast.add_exception(victim)
 	
 	# LEAVE/ENTER MOUSE_MODE_CAPTURED
 	if Input.is_action_just_pressed("ui_cancel"):

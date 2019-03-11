@@ -27,6 +27,7 @@ script = ExtResource( 1 )
 [node name="Navigation" type="Navigation" parent="."]
 
 [node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="Navigation"]
+editor/display_folded = true
 navmesh = SubResource( 1 )
 
 [node name="Floor" parent="Navigation/NavigationMeshInstance" instance=ExtResource( 2 )]

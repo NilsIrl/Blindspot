@@ -25,9 +25,9 @@ points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1,
 points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
 
 [node name="Level5" type="Spatial"]
+script = ExtResource( 1 )
 
 [node name="Navigation" type="Navigation" parent="."]
-script = ExtResource( 1 )
 
 [node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="Navigation"]
 navmesh = SubResource( 1 )
@@ -1020,7 +1020,4 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -41, 3, -59 )
 
 [node name="Void" parent="." instance=ExtResource( 4 )]
 transform = Transform( 2000, 0, 0, 0, 1, 0, 0, 0, 2000, 0, -23, 0 )
-
-[node name="Level5" type="Node" parent="."]
-script = ExtResource( 1 )
 
