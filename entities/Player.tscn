@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/images/cross-shaped-target.png" type="Texture" id=2]
 [ext_resource path="res://assets/fonts/champagne_limousines/Champagne & Limousines.tres" type="DynamicFont" id=3]
 [ext_resource path="res://assets/images/cardinal_points.svg" type="Texture" id=4]
-[ext_resource path="res://assets/audio/thuds/4.ogg" type="AudioStream" id=5]
+[ext_resource path="res://assets/audio/bump.ogg" type="AudioStream" id=5]
 [ext_resource path="res://assets/audio/shot.ogg" type="AudioStream" id=6]
 
 [sub_resource type="CapsuleShape" id=1]
@@ -31,8 +31,11 @@ mesh = SubResource( 3 )
 material/0 = null
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 0, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
 environment = SubResource( 4 )
+doppler_tracking = 2
+current = true
+far = 355.8
 
 [node name="RayCast" type="RayCast" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 0, 0 )

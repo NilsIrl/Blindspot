@@ -68,13 +68,13 @@ text = "Bump Sound"
 editor/display_folded = true
 margin_top = 140.0
 margin_right = 1024.0
-margin_bottom = 1424.0
+margin_bottom = 302.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="Layout/Control/VBoxContainer/HBoxContainer2"]
 margin_right = 768.0
-margin_bottom = 1284.0
+margin_bottom = 162.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 custom_fonts/font = ExtResource( 3 )
@@ -84,7 +84,7 @@ autowrap = true
 [node name="VBoxContainer" type="VBoxContainer" parent="Layout/Control/VBoxContainer/HBoxContainer2"]
 margin_left = 772.0
 margin_right = 1024.0
-margin_bottom = 1284.0
+margin_bottom = 162.0
 
 [node name="PitButton" type="Button" parent="Layout/Control/VBoxContainer/HBoxContainer2/VBoxContainer"]
 margin_right = 252.0
@@ -114,9 +114,9 @@ custom_fonts/font = ExtResource( 3 )
 text = "Zombie Death Sound"
 
 [node name="VoidLabel" type="Label" parent="Layout/Control/VBoxContainer"]
-margin_top = 1428.0
+margin_top = 306.0
 margin_right = 1024.0
-margin_bottom = 1590.0
+margin_bottom = 468.0
 size_flags_vertical = 1
 custom_fonts/font = ExtResource( 3 )
 text = "If you fall into the void that means that you left the map so do not try to jump over the void or anything like that and try a different path. Keep in mind that the void is very near to the start so it is likelly that you are going to fall on certain levels. However, on certain levels the void has been replaced by a wall making it effectively impossible to fall.

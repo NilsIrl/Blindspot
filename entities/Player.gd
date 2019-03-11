@@ -47,13 +47,13 @@ func _physics_process(delta):
 				$BumpAudioStreamPlayer3D.play()
 	was_on_wall = is_on_wall()
 	
-	
 	# SHOOT
-	if Input.is_action_just_pressed("shoot") and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED and $RayCast.is_colliding():
+	if Input.is_action_just_pressed("shoot") and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		$ShotAudioStreamPlayer.play()
-		var victim = $RayCast.get_collider()
-		if victim.has_method("kill"):
-			victim.kill()
+		if $RayCast.is_colliding():
+			var victim = $RayCast.get_collider()
+			if victim.has_method("kill"):
+				victim.kill()
 	
 	# LEAVE/ENTER MOUSE_MODE_CAPTURED
 	if Input.is_action_just_pressed("ui_cancel"):
@@ -81,5 +81,4 @@ func _on_Dialog_about_to_show():
 	alive = false
 
 func _on_Dialog_popup_hide():
-#warning-ignore:return_value_discarded
 	get_tree().change_scene("res://menus/LevelSelector.tscn")

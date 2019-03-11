@@ -7,7 +7,7 @@ var player
 var alive = true
 
 func _physics_process(delta):
-	if navigation and player:
+	if navigation and player and alive:
 		var path = navigation.get_simple_path(self.get_translation(), player.get_translation(), true)
 		var move_vec = path[1] - self.get_translation()
 		move_vec.y = 0
@@ -27,5 +27,9 @@ func set_player(player):
 
 func kill():
 	if alive:
-		queue_free()
 		self.alive = false
+		$AudioStreamPlayer3D.stop()
+		$DeathAudioStreamPlayer3D.play()
+
+func _on_DeathAudioStreamPlayer3D_finished():
+	queue_free()

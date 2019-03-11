@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://entities/Zombie.gd" type="Script" id=1]
 [ext_resource path="res://assets/audio/zombie-audio.ogg" type="AudioStream" id=2]
+[ext_resource path="res://assets/audio/zombie-death.ogg" type="AudioStream" id=3]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 1, 0, 0, 1 )
@@ -34,3 +35,8 @@ unit_size = 30.0
 autoplay = true
 emission_angle_enabled = true
 
+[node name="DeathAudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 3 )
+unit_db = 10.0
+
+[connection signal="finished" from="DeathAudioStreamPlayer3D" to="." method="_on_DeathAudioStreamPlayer3D_finished"]
