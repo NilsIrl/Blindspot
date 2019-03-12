@@ -26,7 +26,7 @@ anchor_bottom = 1.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Layout/Control/VBoxContainer"]
 editor/display_folded = true
-margin_right = 1024.0
+margin_right = 1920.0
 margin_bottom = 36.0
 
 [node name="Label" type="Label" parent="Layout/Control/VBoxContainer/HBoxContainer"]
@@ -46,12 +46,12 @@ text = "End sound"
 [node name="HBoxContainer3" type="HBoxContainer" parent="Layout/Control/VBoxContainer"]
 editor/display_folded = true
 margin_top = 40.0
-margin_right = 1024.0
-margin_bottom = 136.0
+margin_right = 1920.0
+margin_bottom = 103.0
 
 [node name="ControlLabel" type="Label" parent="Layout/Control/VBoxContainer/HBoxContainer3"]
-margin_right = 869.0
-margin_bottom = 96.0
+margin_right = 1765.0
+margin_bottom = 63.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 custom_fonts/font = ExtResource( 3 )
@@ -59,22 +59,22 @@ text = "In order to move you need to use the WASD keys and the mouse to look lef
 autowrap = true
 
 [node name="BumpButton" type="Button" parent="Layout/Control/VBoxContainer/HBoxContainer3"]
-margin_left = 873.0
-margin_right = 1024.0
+margin_left = 1769.0
+margin_right = 1920.0
 margin_bottom = 36.0
 size_flags_vertical = 0
 custom_fonts/font = ExtResource( 3 )
 text = "Bump Sound"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Layout/Control/VBoxContainer"]
-margin_top = 140.0
-margin_right = 1024.0
-margin_bottom = 302.0
+margin_top = 107.0
+margin_right = 1920.0
+margin_bottom = 263.0
 size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="Layout/Control/VBoxContainer/HBoxContainer2"]
-margin_right = 768.0
-margin_bottom = 162.0
+margin_right = 1664.0
+margin_bottom = 156.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 custom_fonts/font = ExtResource( 3 )
@@ -82,9 +82,9 @@ text = "You must also make sure you do not get hit by a zombie. To avoid that yo
 autowrap = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Layout/Control/VBoxContainer/HBoxContainer2"]
-margin_left = 772.0
-margin_right = 1024.0
-margin_bottom = 162.0
+margin_left = 1668.0
+margin_right = 1920.0
+margin_bottom = 156.0
 
 [node name="PitButton" type="Button" parent="Layout/Control/VBoxContainer/HBoxContainer2/VBoxContainer"]
 margin_right = 252.0
@@ -114,20 +114,30 @@ custom_fonts/font = ExtResource( 3 )
 text = "Zombie Death Sound"
 
 [node name="VoidLabel" type="Label" parent="Layout/Control/VBoxContainer"]
-margin_top = 306.0
-margin_right = 1024.0
-margin_bottom = 402.0
+margin_top = 267.0
+margin_right = 1920.0
+margin_bottom = 330.0
 size_flags_vertical = 1
 custom_fonts/font = ExtResource( 3 )
 text = "If you fall into the void that means that you left the map so do not try to jump over the void or anything like that and try a different path. Keep in mind that the void is very near to the start so it is likelly that you are going to fall on certain levels."
 autowrap = true
 
 [node name="TooltipLabel" type="Label" parent="Layout/Control/VBoxContainer"]
-margin_top = 406.0
-margin_right = 1024.0
-margin_bottom = 502.0
+margin_top = 334.0
+margin_right = 1920.0
+margin_bottom = 397.0
 custom_fonts/font = ExtResource( 3 )
 text = "In the level selector, you can hover your mouse hover a level number/name in order to get information on what the level is about. This may help a lot for certain level to know what you are about to fight against."
+autowrap = true
+
+[node name="Label" type="Label" parent="Layout/Control/VBoxContainer"]
+margin_top = 401.0
+margin_right = 1920.0
+margin_bottom = 497.0
+custom_fonts/font = ExtResource( 3 )
+text = "In game you can press escape to pause and go into fullscreen, go to the level selector or main menu.
+
+F11 also switches between fullscreen and windowed mode."
 autowrap = true
 
 [node name="EndAudioStreamPlayer" type="AudioStreamPlayer" parent="."]

@@ -2,7 +2,7 @@ extends KinematicBody
 
 const SPEED = 20
 const GRAVITY = -9.8 * 10
-const NUMBER_OF_TURNS_TO_HEAR = 6
+const NUMBER_OF_TURNS_TO_HEAR = 9
 
 var navigation
 var player
@@ -13,11 +13,12 @@ func _physics_process(delta):
 		var path = remove_intermediate_points(navigation.get_simple_path(self.get_translation(), player.get_translation(), true))
 		
 		if path_distance(path) < 200:
-			var move_vec = path[1] - self.get_translation()
-			move_vec.y = 0
-			move_vec = move_vec.normalized() * SPEED
-			move_vec.y += GRAVITY * delta
-			move_and_slide(move_vec, Vector3(0, 1, 0))
+			if path.size() >= 2:
+				var move_vec = path[1] - self.get_translation()
+				move_vec.y = 0
+				move_vec = move_vec.normalized() * SPEED
+				move_vec.y += GRAVITY * delta
+				move_and_slide(move_vec, Vector3(0, 1, 0))
 		
 		if path.size() <= NUMBER_OF_TURNS_TO_HEAR and !$AudioStreamPlayer3D.is_playing() and alive:
 			$AudioStreamPlayer3D.play()

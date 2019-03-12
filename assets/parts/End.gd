@@ -10,13 +10,14 @@ func _physics_process(delta):
 	rotate_own(delta)
 	if navigation and player:
 		var path = remove_intermediate_points(navigation.get_simple_path(player.get_translation(), self.get_translation(), true))
-		if path[1] != $AudioStreamPlayer3D.global_transform.origin:
-			$AudioStreamPlayer3D.set_translation(path[1] - self.get_global_transform().origin)
-		var distance_to_end = path_distance(path)
-		$AudioStreamPlayer3D.unit_db = INITIAL_DB + linear2db(1 / (distance_to_end / $AudioStreamPlayer3D.unit_size))
-		$AudioStreamPlayer3D.set_rotation(Vector3(0, player.get_rotation().y, 0))
-		$AudioStreamPlayer3D.transform.basis = $AudioStreamPlayer3D.transform.basis.rotated(Vector3(0, 1, 0), deg2rad(180))
-		player.updateUI(distance_to_end)
+		if path.size() >= 2:
+			if path[1] != $AudioStreamPlayer3D.global_transform.origin:
+				$AudioStreamPlayer3D.set_translation(path[1] - self.get_global_transform().origin)
+			var distance_to_end = path_distance(path)
+			$AudioStreamPlayer3D.unit_db = INITIAL_DB + linear2db(1 / (distance_to_end / $AudioStreamPlayer3D.unit_size))
+			$AudioStreamPlayer3D.set_rotation(Vector3(0, player.get_rotation().y, 0))
+			$AudioStreamPlayer3D.transform.basis = $AudioStreamPlayer3D.transform.basis.rotated(Vector3(0, 1, 0), deg2rad(180))
+			player.updateUI(distance_to_end)
 
 func rotate_own(delta):
 	$EndPoint.rotate_x(ROTATION_SPEED * delta)

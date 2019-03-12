@@ -15,6 +15,7 @@ var alive = true
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	enemy_left = get_tree().get_nodes_in_group("zombie").size()
+	$PauseGui.visible = false
 
 func _physics_process(delta):
 	var dir = Vector3(0, 0, 0)
@@ -60,7 +61,19 @@ func _physics_process(delta):
 	
 	# LEAVE/ENTER MOUSE_MODE_CAPTURED
 	if Input.is_action_just_pressed("ui_cancel"):
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED or not alive else Input.MOUSE_MODE_CAPTURED)
+		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+			get_tree().paused = true
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+			$GameplayGUI.visible = false
+			$PauseGui.visible = true
+		else:
+			get_tree().paused = false
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+			$GameplayGUI.visible = true
+			$PauseGui.visible = false
+
+	if Input.is_action_just_pressed("ui_fullscreen"):
+		_on_FullscreenButton_pressed()
 	$GameplayGUI/EnemiesLeft.text = str(enemy_left) + " enemies left"
 
 func updateUI(distance):
@@ -68,6 +81,7 @@ func updateUI(distance):
 
 func kill(reason):
 	if alive:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		$DieMenu/DieDialog.dialog_text = "You died from " + reason
 		$DieMenu/DieDialog.popup()
 
@@ -85,4 +99,13 @@ func _on_Dialog_about_to_show():
 	alive = false
 
 func _on_Dialog_popup_hide():
+	get_tree().paused = false
 	get_tree().change_scene("res://menus/LevelSelector.tscn")
+
+
+func _on_FullscreenButton_pressed():
+	OS.window_fullscreen = false if OS.window_fullscreen else true
+
+func _on_MainMenuButton_pressed():
+	get_tree().paused = false
+	get_tree().change_scene("res://menus/MainMenu.tscn")
