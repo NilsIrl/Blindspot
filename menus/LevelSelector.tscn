@@ -18,7 +18,7 @@ text = "Chooose a level"
 margin_left = 365.0
 margin_top = 44.0
 margin_right = 659.0
-margin_bottom = 600.0
+margin_bottom = 362.0
 size_flags_horizontal = 4
 size_flags_vertical = 3
 custom_constants/vseparation = 105
@@ -61,7 +61,7 @@ margin_left = 133.0
 margin_top = 141.0
 margin_right = 161.0
 margin_bottom = 177.0
-hint_tooltip = "Your first maze without any dangers."
+hint_tooltip = "Your first maze."
 custom_fonts/font = ExtResource( 3 )
 text = "5"
 
@@ -70,7 +70,7 @@ margin_left = 266.0
 margin_top = 141.0
 margin_right = 294.0
 margin_bottom = 177.0
-hint_tooltip = "A maze with dangers."
+hint_tooltip = "Like level five except that you will encounter some enemies and pits."
 custom_fonts/font = ExtResource( 3 )
 text = "6"
 
@@ -87,7 +87,7 @@ margin_left = 133.0
 margin_top = 282.0
 margin_right = 161.0
 margin_bottom = 318.0
-hint_tooltip = "A maze with dangers."
+hint_tooltip = "Like level seven except that you will encounter some enemies and pits."
 custom_fonts/font = ExtResource( 3 )
 text = "8"
 
@@ -100,6 +100,17 @@ hint_tooltip = "Hardest levels with everything seen so far: zombies, pits, mazes
 custom_fonts/font = ExtResource( 3 )
 text = "9"
 
+[node name="Bonus" type="Button" parent="Layout"]
+margin_left = 473.0
+margin_top = 465.0
+margin_right = 551.0
+margin_bottom = 501.0
+hint_tooltip = "Because of how hard level nine was it was decided to add this level which is level nine without any dangers. Just the maze."
+size_flags_horizontal = 4
+size_flags_vertical = 6
+custom_fonts/font = ExtResource( 3 )
+text = "Bonus"
+
 [connection signal="pressed" from="Layout/GridContainer/Button1" to="." method="_on_Button_pressed" binds= [ 1 ]]
 [connection signal="pressed" from="Layout/GridContainer/Button2" to="." method="_on_Button_pressed" binds= [ 2 ]]
 [connection signal="pressed" from="Layout/GridContainer/Button3" to="." method="_on_Button_pressed" binds= [ 3 ]]
@@ -108,6 +119,7 @@ text = "9"
 [connection signal="pressed" from="Layout/GridContainer/Button6" to="." method="_on_Button_pressed" binds= [ 6 ]]
 [connection signal="pressed" from="Layout/GridContainer/Button7" to="." method="_on_Button_pressed" binds= [ 7 ]]
 [connection signal="pressed" from="Layout/GridContainer/Button8" to="." method="_on_Button_pressed" binds= [ 8 ]]
-[connection signal="pressed" from="Layout/GridContainer/Button9" to="." method="_on_Button_pressed" binds= [ 9 ]]
+[connection signal="pressed" from="Layout/GridContainer/Button9" to="." method="_on_Button_pressed" binds= [ 10 ]]
+[connection signal="pressed" from="Layout/Bonus" to="." method="_on_Button_pressed" binds= [ 9 ]]
 
 [editable path="Layout"]
