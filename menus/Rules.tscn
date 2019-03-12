@@ -25,6 +25,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Layout/Control/VBoxContainer"]
+editor/display_folded = true
 margin_right = 1024.0
 margin_bottom = 36.0
 
@@ -43,6 +44,7 @@ custom_fonts/font = ExtResource( 3 )
 text = "End sound"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="Layout/Control/VBoxContainer"]
+editor/display_folded = true
 margin_top = 40.0
 margin_right = 1024.0
 margin_bottom = 136.0
@@ -65,12 +67,10 @@ custom_fonts/font = ExtResource( 3 )
 text = "Bump Sound"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Layout/Control/VBoxContainer"]
-editor/display_folded = true
 margin_top = 140.0
 margin_right = 1024.0
 margin_bottom = 302.0
 size_flags_horizontal = 3
-size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="Layout/Control/VBoxContainer/HBoxContainer2"]
 margin_right = 768.0
@@ -116,11 +116,18 @@ text = "Zombie Death Sound"
 [node name="VoidLabel" type="Label" parent="Layout/Control/VBoxContainer"]
 margin_top = 306.0
 margin_right = 1024.0
-margin_bottom = 468.0
+margin_bottom = 402.0
 size_flags_vertical = 1
 custom_fonts/font = ExtResource( 3 )
-text = "If you fall into the void that means that you left the map so do not try to jump over the void or anything like that and try a different path. Keep in mind that the void is very near to the start so it is likelly that you are going to fall on certain levels. However, on certain levels the void has been replaced by a wall making it effectively impossible to fall.
-"
+text = "If you fall into the void that means that you left the map so do not try to jump over the void or anything like that and try a different path. Keep in mind that the void is very near to the start so it is likelly that you are going to fall on certain levels."
+autowrap = true
+
+[node name="TooltipLabel" type="Label" parent="Layout/Control/VBoxContainer"]
+margin_top = 406.0
+margin_right = 1024.0
+margin_bottom = 502.0
+custom_fonts/font = ExtResource( 3 )
+text = "In the level selector, you can hover your mouse hover a level number/name in order to get information on what the level is about. This may help a lot for certain level to know what you are about to fight against."
 autowrap = true
 
 [node name="EndAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
