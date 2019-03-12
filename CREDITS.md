@@ -18,3 +18,7 @@ Zombie Sound Effects available on
 [Youtube](https://www.youtube.com/watch?v=wg8u3AQj1Ac) and modified by Nils
 Andre
 
+Fullscreen symbol icon by
+[Dave Gandy](https://www.flaticon.com/authors/dave-gandy) and licensed under
+[Attribution 3.0 Unported (CC BY 3.0)]("http://creativecommons.org/licenses/by/3.0/")
+

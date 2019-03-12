@@ -9,51 +9,71 @@
 margin_left = 0.0
 margin_right = 0.0
 
+[node name="HBoxContainer" parent="Layout" index="0"]
+margin_right = 1920.0
+
 [node name="Title" parent="Layout/HBoxContainer" index="1"]
+margin_right = 1880.0
 text = "Credits"
+
+[node name="FullscreenButton" parent="Layout/HBoxContainer" index="2"]
+margin_left = 1884.0
+margin_right = 1920.0
+
+[node name="Control" parent="Layout" index="1"]
+margin_right = 1920.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Layout/Control" index="0"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_bottom = 365.0
 size_flags_vertical = 3
 
 [node name="CrossHairLabel" type="Label" parent="Layout/Control/VBoxContainer"]
-margin_right = 1024.0
-margin_bottom = 96.0
+margin_right = 1920.0
+margin_bottom = 63.0
 custom_fonts/font = ExtResource( 2 )
 text = "Cross-hair made by [Freepik](\"https://www.freepik.com/\") from [Flaticon](\"https://www.flaticon.com/\") and licensed under [Creative Commons BY 3.0](\"http://creativecommons.org/licenses/by/3.0/\") and modified by Nils Andre"
 autowrap = true
 
 [node name="CompassRoseLabel" type="Label" parent="Layout/Control/VBoxContainer"]
-margin_top = 100.0
-margin_right = 1024.0
-margin_bottom = 196.0
+margin_top = 67.0
+margin_right = 1920.0
+margin_bottom = 130.0
 size_flags_vertical = 8
 custom_fonts/font = ExtResource( 2 )
 text = "Compass card by [Browsen](https://commons.wikimedia.org/wiki/User:Brosen~commonswiki) and licensed under [Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)](https://creativecommons.org/licenses/by-sa/3.0/)"
 autowrap = true
 
 [node name="ZombieLongDeathLabel" type="Label" parent="Layout/Control/VBoxContainer"]
-margin_top = 200.0
-margin_right = 1024.0
-margin_bottom = 329.0
+margin_top = 134.0
+margin_right = 1920.0
+margin_bottom = 197.0
 custom_fonts/font = ExtResource( 2 )
 text = "Zombie Long Death by [Mike Koenig](http://soundbible.com/1042-Zombie-Long-Death.html) and licensed under [Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)](https://creativecommons.org/licenses/by-sa/3.0/)"
 autowrap = true
 
 [node name="ZombieAudioLabel" type="Label" parent="Layout/Control/VBoxContainer"]
-margin_top = 333.0
-margin_right = 1024.0
-margin_bottom = 429.0
+margin_top = 201.0
+margin_right = 1920.0
+margin_bottom = 231.0
 custom_fonts/font = ExtResource( 2 )
-text = "Zombie Sound Effects available on [Youtube](https://www.youtube.com/watch?v=wg8u3AQj1Ac) and modified by Nils Andre
+text = "Zombie Sound Effects available on [Youtube](https://www.youtube.com/watch?v=wg8u3AQj1Ac) and modified by Nils Andre"
+autowrap = true
+
+[node name="FullscreenLabel" type="Label" parent="Layout/Control/VBoxContainer"]
+margin_top = 235.0
+margin_right = 1920.0
+margin_bottom = 331.0
+custom_fonts/font = ExtResource( 2 )
+text = "Fullscreen symbol icon by [Dave Gandy](https://www.flaticon.com/authors/dave-gandy) and licensed under [Attribution 3.0 Unported (CC BY 3.0)](\"http://creativecommons.org/licenses/by/3.0/\")
 "
 autowrap = true
 
 [node name="Label" type="Label" parent="Layout/Control/VBoxContainer"]
-margin_top = 433.0
-margin_right = 1024.0
-margin_bottom = 463.0
+margin_top = 335.0
+margin_right = 1920.0
+margin_bottom = 365.0
 custom_fonts/font = ExtResource( 2 )
 text = "If an item isn't mentioned it isn't under a license requiring attribution."
 

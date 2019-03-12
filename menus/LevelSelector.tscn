@@ -12,7 +12,7 @@ margin_left = 0.0
 margin_right = 0.0
 
 [node name="Title" parent="Layout/HBoxContainer" index="1"]
-text = "Chooose a level"
+text = "Choose a level"
 
 [node name="GridContainer" type="GridContainer" parent="Layout"]
 margin_left = 365.0
