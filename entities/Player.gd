@@ -7,11 +7,14 @@ const JUMP_SPEED = 50
 
 var was_on_wall = true
 
+var enemy_left
+
 var vel = Vector3()
 var alive = true
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	enemy_left = get_tree().get_nodes_in_group("zombie").size()
 
 func _physics_process(delta):
 	var dir = Vector3(0, 0, 0)
@@ -28,9 +31,7 @@ func _physics_process(delta):
 	input_movement_vector = input_movement_vector.normalized() * SPEED
 	dir += self.get_global_transform().basis.x.normalized() * input_movement_vector.x
 	dir += self.get_global_transform().basis.y.normalized() * input_movement_vector.y
-	
 	dir.y = vel.y
-	
 	if Input.is_action_just_pressed("move_jump") and is_on_floor():
 		dir.y += JUMP_SPEED
 
@@ -54,11 +55,13 @@ func _physics_process(delta):
 			var victim = $RayCast.get_collider()
 			if victim.has_method("kill"):
 				victim.kill()
+				enemy_left -= 1
 				$RayCast.add_exception(victim)
 	
 	# LEAVE/ENTER MOUSE_MODE_CAPTURED
 	if Input.is_action_just_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED or not alive else Input.MOUSE_MODE_CAPTURED)
+	$GameplayGUI/EnemiesLeft.text = str(enemy_left) + " enemies left"
 
 func updateUI(distance):
 	$GameplayGUI/Label.text = "Distance remaining: " + str(int(distance)) + " m"

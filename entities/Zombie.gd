@@ -2,7 +2,7 @@ extends KinematicBody
 
 const SPEED = 20
 const GRAVITY = -9.8 * 10
-const NUMBER_OF_TURNS_TO_HEAR = 4
+const NUMBER_OF_TURNS_TO_HEAR = 6
 
 var navigation
 var player

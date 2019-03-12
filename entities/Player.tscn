@@ -101,6 +101,13 @@ rect_pivot_offset = Vector2( 300, 300 )
 texture = ExtResource( 4 )
 stretch_mode = 5
 
+[node name="EnemiesLeft" type="Label" parent="GameplayGUI"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -30.0
+margin_right = 40.0
+custom_fonts/font = ExtResource( 3 )
+
 [node name="BumpAudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource( 5 )
 unit_db = -10.0
