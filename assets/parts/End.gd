@@ -9,7 +9,7 @@ var player
 func _physics_process(delta):
 	rotate_own(delta)
 	if navigation and player:
-		var path = remove_intermediate_points(navigation.get_simple_path(player.get_translation(), self.get_translation(), true))
+		var path = navigation.get_simple_path(player.get_translation(), self.get_translation(), true)
 		if path.size() >= 2:
 			if path[1] != $AudioStreamPlayer3D.global_transform.origin:
 				$AudioStreamPlayer3D.set_translation(path[1] - self.get_global_transform().origin)
@@ -29,18 +29,6 @@ func set_player(player):
 
 func set_navigation(navigation):
 	self.navigation = navigation
-
-func remove_intermediate_points(simple_path):
-	var x = 1
-	while x < len(simple_path) - 1:
-		if is_intermediate_point(simple_path[x-1], simple_path[x], simple_path[x+1]):
-			simple_path.remove(x)
-		else:
-			x+=1
-	return simple_path
-
-func is_intermediate_point(a, b, c):
-	return abs((c.z - a.z) * b.x - (c.x - a.x) * b.z + c.x * a.z - c.z * a.x)/sqrt(pow((c.z - a.z), 2) + pow((c.x - a.x), 2)) < 0.01
 
 func path_distance(path):
 	var distance = 0
