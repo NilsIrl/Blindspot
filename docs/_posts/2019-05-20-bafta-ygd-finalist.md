@@ -3,7 +3,7 @@ title: We have made it!
 categories: [blog, update]
 ---
 
-# Why it all started
+### Why it all started
 
 Five months ago or so, I was told by my computing teacher that willing students
 could participate to the [BAFTA Young Game Designer Game Making
@@ -11,7 +11,7 @@ Award](http://ygd.bafta.org/) with the help of Harry Petch,
 [twice](http://ygd.bafta.org/competition/competition-news/2016/illuminate)
 [finalist](http://ygd.bafta.org/competition/competition-news/2019/tempo).
 
-# Making the game
+### Making the game
 
 During the following months, I tried to come up with ideas. Very early I had
 already the idea of making a game in a dark environment which then shifted to a
@@ -21,7 +21,7 @@ During the last month before the submission, I started making the game using
 [Godot](https://godotengine.org/) and got to finish release
 [v0.1](https://github.com/NilsIrl/Blindspot/releases/tag/v0.1).
 
-# The future of the game
+### The future of the game
 
 If I am writing this, it's because we (with the game) are
 [finalist](http://ygd.bafta.org/competition/competition-news/2019/blindspot-0)!!
