@@ -3,12 +3,24 @@ title: Main page
 ---
 <p>A game where the only available sense is hearing, which means that visually
 impaired will not have any disadvantage compared to others.</p>
-<h3>Blog posts:</h2>
-<ul>
-  {% for post in site.posts limit:5 %}
-  <li>
-    <a href="{{ post.url }}">{{ post.title }}</a>
-  </li>
-  {% endfor %}
-</ul>
-<a href="blog.html">See all {{ site.posts | size }} posts...</a>
+<section>
+  <h3>Blog posts:</h2>
+  <ul>
+    {%- for post in site.posts limit:5 %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+    {%- endfor %}
+  </ul>
+  <a href="blog.html">See all {{ site.posts | size }} posts...</a>
+</section>
+<section>
+  <h3>Releases</h3>
+  <ul>
+    {%- for release in site.github.releases limit:5 %}
+    <li><a href="{{ release.html_url }}">{{ release.tag_name}}</a>: {{
+      release.name }}</li>
+    {%- endfor %}
+  </ul>
+  <a href="release.html">See all {{ site.github.releases | size }} releases...</a>
+</section>

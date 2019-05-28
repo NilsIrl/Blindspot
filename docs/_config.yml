@@ -9,3 +9,4 @@ defaults:
             type: "posts"
         values:
             layout: "post"
+repository: NilsIRL/Blindspot
